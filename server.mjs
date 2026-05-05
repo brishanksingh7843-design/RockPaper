@@ -4,8 +4,9 @@ const app=express();
 const PORT=process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
+app.use(express.static('.'));
 import OpenAI from 'openai';
-const apike='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';
+const apike=process.env.GROQ_API_KEY;
  const client=new OpenAI({
     apiKey:apike,
     baseURL:'https://api.groq.com/openai/v1',
@@ -33,7 +34,7 @@ app.post('/ok', async (request,response)=>{
 
 });
 
-app.listen(PORT,()=>{
+app.listen(PORT,'0.0.0.0',()=>{
   console.log('server started'+PORT);
 });
 
