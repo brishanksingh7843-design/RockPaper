@@ -12,8 +12,7 @@ const apike=process.env.GROQ_API_KEY;
     baseURL:'https://api.groq.com/openai/v1',
   }
   );
-  //get and post are two different things
-//get gets the meassage and post gives the message.
+ 
 
 
 app.post('/ok', async (request,response)=>{
